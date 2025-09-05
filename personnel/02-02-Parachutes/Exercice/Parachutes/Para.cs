@@ -13,6 +13,7 @@ namespace Parachutes
         public string _name;
         public const int _PARA_HEIGHT = 6;
         public bool parachuteIsOpen;
+        public int _parachutistXPos;
 
         private string[] withoutParachute =
         {
@@ -57,10 +58,10 @@ namespace Parachutes
 
             for (int i = 0; i < view.Length; i++)
             {
-                Console.SetCursorPosition(x, Config.SCREEN_HEIGHT - this._altitude + i);
+                Console.SetCursorPosition(_parachutistXPos, Config.SCREEN_HEIGHT - this._altitude + i);
                 Console.Write(view[i]);
             }
-            Console.SetCursorPosition(x, Config.SCREEN_HEIGHT - this._altitude - 1);
+            Console.SetCursorPosition(_parachutistXPos, Config.SCREEN_HEIGHT - this._altitude - 1);
             Console.Write(this._name);
 
 

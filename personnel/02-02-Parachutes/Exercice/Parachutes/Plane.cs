@@ -11,6 +11,7 @@ namespace Parachutes
         // Position de l'avion
         public int _planeXPos;
         public List<Para> parachutists;
+        private int _altitude;
 
         private string[] view =
         {
@@ -26,6 +27,7 @@ namespace Parachutes
         public Plane(int planeXPos)
         {
             this._planeXPos = planeXPos;
+            _altitude = Config.SCREEN_HEIGHT;
         }
 
 
@@ -51,6 +53,15 @@ namespace Parachutes
         public void Board(Para para)
         {
             this.parachutists.Add(para);
+        }
+
+        public Para DropParachutist()
+        {
+            Para parachutist = parachutists.First();
+            parachutists.Remove(parachutist);
+            parachutist._parachutistXPos = _planeXPos;
+            parachutist._altitude = this._altitude;
+            return parachutist;
         }
     }
 }
