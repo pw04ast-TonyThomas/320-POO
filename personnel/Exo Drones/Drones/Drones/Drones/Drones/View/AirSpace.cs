@@ -1,4 +1,5 @@
 using Drones.Helpers;
+using Drones.Properties;
 
 namespace Drones
 {
@@ -34,12 +35,22 @@ namespace Drones
         // Affichage de la situation actuelle
         private void Render()
         {
-            airspace.Graphics.Clear(Color.LightGreen);
+            airspace.Graphics.DrawImage(Resources.Background, -100, -100,1920/1.4f,1080/1.4f);
 
             // draw Buildings
             foreach (Building batiment in buildings)
             {
-                batiment.Render(airspace);
+                if (batiment.GetType() == typeof(Factory))
+                {
+                    Factory factory = (Factory)batiment;
+                    factory.Render(airspace);
+                } 
+                else if (batiment.GetType() == typeof(Store))
+                {
+                    Store store = (Store)batiment;
+                    store.Render(airspace); 
+                }
+                else batiment.Render(airspace);
             }
 
             // draw drones

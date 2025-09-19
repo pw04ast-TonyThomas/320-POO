@@ -7,6 +7,7 @@
         protected int _yPos;
         protected int _width;
         protected int _height;
+        protected static string buildingColor = "DarkGray";
 
         public Building(int xPos, int yPos, int width, int height)
         {

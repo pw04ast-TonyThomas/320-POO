@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drones", "Drones\Drones.csproj", "{2EEE1A5F-56B1-463B-A464-11E112253F45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projet Test Unitaire", "Projet Test Unitaire\Projet Test Unitaire.csproj", "{D749D557-CABE-42FD-AB0E-9C390003D255}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUnitaireMsTest", "TestUnitaireMsTest\TestUnitaireMsTest.csproj", "{E1EDF801-74D2-4CF1-B17C-2097A58D7833}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{2EEE1A5F-56B1-463B-A464-11E112253F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EEE1A5F-56B1-463B-A464-11E112253F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EEE1A5F-56B1-463B-A464-11E112253F45}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D749D557-CABE-42FD-AB0E-9C390003D255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D749D557-CABE-42FD-AB0E-9C390003D255}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D749D557-CABE-42FD-AB0E-9C390003D255}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D749D557-CABE-42FD-AB0E-9C390003D255}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1EDF801-74D2-4CF1-B17C-2097A58D7833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1EDF801-74D2-4CF1-B17C-2097A58D7833}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1EDF801-74D2-4CF1-B17C-2097A58D7833}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1EDF801-74D2-4CF1-B17C-2097A58D7833}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
