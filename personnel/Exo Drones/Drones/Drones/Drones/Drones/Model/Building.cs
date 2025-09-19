@@ -3,10 +3,10 @@
 
     public partial class Building
     {
-        private int _xPos;
-        private int _yPos;
-        private int _width;
-        private int _height;
+        protected int _xPos;
+        protected int _yPos;
+        protected int _width;
+        protected int _height;
 
         public Building(int xPos, int yPos, int width, int height)
         {
