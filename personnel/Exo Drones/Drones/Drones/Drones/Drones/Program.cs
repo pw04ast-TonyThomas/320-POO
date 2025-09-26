@@ -24,7 +24,7 @@ namespace Drones
             {
                 Drone drone = new Drone();
                 drone.X = 100;
-                drone.Y = RandomHelper.random.Next(100, 500);
+                drone.Y = RandomHelper.random.Next(0, 600);
                 drone.Name = "Joe";
                 fleet.Add(drone);
             }
