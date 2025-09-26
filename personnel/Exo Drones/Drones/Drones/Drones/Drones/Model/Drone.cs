@@ -1,9 +1,11 @@
 ﻿using Drones.Helpers;
+using Drones.Interfaces;
+
 
 namespace Drones
 {
     // Cette partie de la classe Drone définit ce qu'est un drone par un modèle numérique
-    public partial class Drone
+    public partial class Drone : IExpellable
     {
      
 
@@ -16,6 +18,12 @@ namespace Drones
         public int Y { get { return _y; } set { _y = value; }}
 
 
+        public Drone(int x, int y)
+        {
+            this._x = x;
+            this._y = y;
+        }
+
         // Cette méthode calcule le nouvel état dans lequel le drone se trouve après
         // que 'interval' millisecondes se sont écoulées
         public void Update(int interval)
@@ -23,6 +31,21 @@ namespace Drones
             X += 2;                                    // Il s'est déplacé de 2 pixels vers la droite
             Y += RandomHelper.random.Next(-2, 3);                     // Il s'est déplacé d'une valeur aléatoire vers le haut ou le bas
             charge--;                                  // Il a dépensé de l'énergie
+        }
+
+        public bool Evacuate(Rectangle zone)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void FreeFlight()
+        {
+            throw new NotImplementedException();
+        }
+
+        public EvacuationState GetEvacuationState()
+        {
+            throw new NotImplementedException();
         }
     }
 }

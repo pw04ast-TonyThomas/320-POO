@@ -22,8 +22,8 @@ namespace Drones
             List<Drone> fleet= new List<Drone>();
             for (int i = 0; i < 1000; i++)
             {
-                Drone drone = new Drone();
-                drone.X = 100;
+                Drone drone = new Drone(1,1);
+                drone.X = RandomHelper.random.Next(0, 1000);
                 drone.Y = RandomHelper.random.Next(0, 600);
                 drone.Name = "Joe";
                 fleet.Add(drone);
