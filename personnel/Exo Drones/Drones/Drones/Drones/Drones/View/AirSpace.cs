@@ -12,6 +12,8 @@ namespace Drones
         public const int WIDTH = 1200;        // Dimensions of the airspace
         public const int HEIGHT = 600;
 
+        private static int nbOfDrones;
+
         // La flotte est l'ensemble des drones qui évoluent dans notre espace aérien
         private List<Drone> fleet;
         private List<Building> buildings;
@@ -22,6 +24,7 @@ namespace Drones
         // Initialisation de l'espace aérien avec un certain nombre de drones
         public AirSpace(List<Drone> fleet, List<Building> buildings)
         {
+            if (fleet.Count > 10) throw new Exception("Pas Content!"); // si plus de 10 drones, lancer une exception.
             InitializeComponent();
             // Gets a reference to the current BufferedGraphicsContext
             currentContext = BufferedGraphicsManager.Current;

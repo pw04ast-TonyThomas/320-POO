@@ -20,11 +20,15 @@ namespace Drones
 
             // Création de la flotte de drones
             List<Drone> fleet= new List<Drone>();
-            Drone drone = new Drone();
-            drone.X = 100;
-            drone.Y = 100;
-            drone.Name = "Joe";
-            fleet.Add(drone);
+            for (int i = 0; i < 10; i++)
+            {
+                Drone drone = new Drone();
+                drone.X = 100;
+                drone.Y = RandomHelper.random.Next(100, 500);
+                drone.Name = "Joe";
+                fleet.Add(drone);
+            }
+
 
             // Création de la liste de batiments
             List<Building> buildings = new List<Building>();
@@ -45,9 +49,16 @@ namespace Drones
                 buildings.Add(store);
             }
 
+            try
+            {
+                // Démarrage
+                Application.Run(new AirSpace(fleet, buildings));
+            }
+            catch (Exception e)
+            {
 
-            // Démarrage
-            Application.Run(new AirSpace(fleet, buildings));
+            }
+
         }
     }
 }

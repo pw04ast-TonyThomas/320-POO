@@ -24,8 +24,5 @@ namespace Drones
             Y += RandomHelper.random.Next(-2, 3);                     // Il s'est déplacé d'une valeur aléatoire vers le haut ou le bas
             charge--;                                  // Il a dépensé de l'énergie
         }
-
-
-
     }
 }
