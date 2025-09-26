@@ -7,7 +7,7 @@ namespace Drones
     // Cette partie de la classe Drone définit ce qu'est un drone par un modèle numérique
     public partial class Drone : IExpellable
     {
-     
+
 
         private int charge = 1000;                     // La charge actuelle de la batterie
         private string _name;                          // Un nom
@@ -16,7 +16,6 @@ namespace Drones
         public int X { get { return _x; } set { _x = value; }}           
         private int _y;                                // Position en Y depuis le haut de l'espace aérien
         public int Y { get { return _y; } set { _y = value; }}
-
 
         public Drone(int x, int y)
         {
@@ -29,23 +28,34 @@ namespace Drones
         public void Update(int interval)
         {
             X += 2;                                    // Il s'est déplacé de 2 pixels vers la droite
-            Y += RandomHelper.random.Next(-2, 3);                     // Il s'est déplacé d'une valeur aléatoire vers le haut ou le bas
+            Y += RandomHelper.random.Next(-2, 3);      // Il s'est déplacé d'une valeur aléatoire vers le haut ou le bas
             charge--;                                  // Il a dépensé de l'énergie
         }
 
+        EvacuationState state = EvacuationState.Free;
+
         public bool Evacuate(Rectangle zone)
         {
-            throw new NotImplementedException();
+            if (zone.IntersectsWith(new Rectangle(X, Y, 1, 1)))
+            {
+                state = EvacuationState.Evacuating;
+                return false;
+            }
+            else
+            {
+                state = EvacuationState.Evacuated;
+                return true;
+            }
         }
 
         public void FreeFlight()
         {
-            throw new NotImplementedException();
+            state = EvacuationState.Free;
         }
 
         public EvacuationState GetEvacuationState()
         {
-            throw new NotImplementedException();
+            return state;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Drones
         // Initialisation de l'espace aérien avec un certain nombre de drones
         public AirSpace(List<Drone> fleet, List<Building> buildings)
         {
-            if (fleet.Count > 1000) throw new Exception("Pas Content!"); // si plus de 10 drones, lancer une exception.
+            if (fleet.Count > 100) throw new Exception("Pas Content!"); // si plus de 10 drones, lancer une exception.
             InitializeComponent();
             // Gets a reference to the current BufferedGraphicsContext
             currentContext = BufferedGraphicsManager.Current;
@@ -52,6 +52,11 @@ namespace Drones
                 {
                     Store store = (Store)batiment;
                     store.Render(airspace); 
+                }
+                else if (batiment.GetType() == typeof(NoFlyBuilding))
+                {
+                    NoFlyBuilding noFlyBuilding = (NoFlyBuilding)batiment;
+                    noFlyBuilding.Render(airspace);
                 }
                 else batiment.Render(airspace);
             }
