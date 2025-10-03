@@ -33,6 +33,8 @@ namespace Drones
                 Factory factory = new Factory(RandomHelper.random.Next(1000, 50000), RandomHelper.random.Next(50, AirSpace.WIDTH - 100), RandomHelper.random.Next(50, AirSpace.HEIGHT - 100), RandomHelper.random.Next(20, 200), RandomHelper.random.Next(20, 200));
                 Store store = new Store("Lundi 8h-18h", RandomHelper.random.Next(50, AirSpace.WIDTH - 100), RandomHelper.random.Next(50, AirSpace.HEIGHT - 100), storeSize, storeSize);
 
+                Console.WriteLine($"this factory's id is: {factory.personnalId}");
+
                 buildings.Add(factory);
                 buildings.Add(store);
             }
@@ -50,9 +52,6 @@ namespace Drones
                 drone.Name = "Joe";
                 fleet.Add(drone);
             }
-
-
-
 
             try
             {

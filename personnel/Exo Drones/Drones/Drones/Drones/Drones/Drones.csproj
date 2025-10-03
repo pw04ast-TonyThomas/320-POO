@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <Folder Include="Config\" />
+    <Folder Include="Libraries\" />
   </ItemGroup>
 
   <ItemGroup>

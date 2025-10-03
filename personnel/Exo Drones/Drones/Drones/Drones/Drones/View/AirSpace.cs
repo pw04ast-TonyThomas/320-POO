@@ -1,4 +1,5 @@
 using Drones.Helpers;
+using Drones.Model;
 using Drones.Properties;
 
 namespace Drones
@@ -13,6 +14,7 @@ namespace Drones
         public const int HEIGHT = 600;
 
         private static int nbOfDrones;
+        public static Dispatch Dispatcher = new Dispatch();
 
         // La flotte est l'ensemble des drones qui évoluent dans notre espace aérien
         private List<Drone> fleet;
@@ -72,6 +74,15 @@ namespace Drones
         // Calcul du nouvel état après que 'interval' millisecondes se sont écoulées
         private void Update(int interval)
         {
+            foreach (Building batiment in buildings)
+            {
+                if (batiment.GetType() == typeof(Factory))
+                {
+                    Factory factory = (Factory)batiment;
+                    factory.Update(interval);
+                }
+            }
+
             foreach (Drone drone in fleet)
             {
                 drone.Update(interval);
