@@ -15,12 +15,11 @@ namespace Boat
 
         public string Color { get; }
 
-        public Container(int id, float weight, bool isRefrigerated, List<string> merchandise, string color)
+        public Container(int id, float weight, bool isRefrigerated, string color)
         {
             this.Id = id;
             this.Weight = weight;
             this.IsRefrigerated = isRefrigerated;
-            this.Merchandise = merchandise;
             this.Color = color;
         }
 

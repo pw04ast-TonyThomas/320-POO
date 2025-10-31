@@ -20,11 +20,20 @@ namespace Drones
             Boat.Boat boat3 = new Boat.Boat("Orienter#", 30, 200);
             boats.Add(boat3);
 
-
             foreach (var boat in boats)
             {
                 boat.Start();
-                boat.LoadContainer(new Container());
+                boat.LoadContainer(new Boat.RefrigeratedContainer(1, 20, "Blue"));
+                boat.LoadContainer(new Boat.TankContainer(2, 40, "Green"));
+                boat.LoadContainer(new Boat.SensitiveContainer(3, 30, "Red"));
+
+                int index = 0;
+
+                foreach (var container in boat.Containers)
+                {
+                    Console.WriteLine(boat.Containers[index]);
+                    index++;
+                }
             }
         }
     }
